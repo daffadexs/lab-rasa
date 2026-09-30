@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab Rasa | Eksperimen Rasa Kuliner Kekinian</title>
+    <!-- Google Fonts & FontAwesome Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- File CSS Eksternal -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <i class="fa-solid fa-vial-circle-check"></i>
+                <span>LAB<span class="highlight">RASA</span></span>
+            </a>
+            
+            <nav class="nav-links" id="navLinks">
+                <a href="#hero" class="nav-item active">Beranda</a>
+                <a href="#menu" class="nav-item">Eksperimen Menu</a>
+                <a href="#promo" class="nav-item">Promo Spektakuler</a>
+                <a href="#reviews" class="nav-item">Kata Mereka</a>
+                <a href="#contact" class="nav-item">Lokasi</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="cart-btn" id="cartToggle" aria-label="Keranjang Belanja">
+                    <i class="fa-solid fa-flask"></i>
+                    <span class="cart-badge" id="cartCount">0</span>
+                </button>
+                <button class="hamburger" id="hamburger" aria-label="Menu Mobile">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-bg-glow"></div>
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <div class="hero-badge"><i class="fa-solid fa-bolt"></i> Formulanya Pas, Rasanya Nagih!</div>
+                <h1>Laboratorium Eksperimen <span class="gradient-text">Rasa Kuliner</span> Terbaik!</h1>
+                <p>Jelajahi perpaduan sensasi <strong>Pedas membara, Manis meleleh, Asin-Gurih kaya rempah</strong>, hingga <strong>Minuman Segar penawar dahaga</strong> dalam satu tempat.</p>
+                
+                <div class="hero-ctas">
+                    <a href="#menu" class="btn btn-primary"><i class="fa-solid fa-utensils"></i> Lihat Menu Rasa</a>
+                    <a href="https://wa.me/6281234567890?text=Halo%20Lab%20Rasa,%20saya%20mau%20tanya%20menu" target="_blank" class="btn btn-outline"><i class="fa-brands fa-whatsapp"></i> Chat WhatsApp</a>
+                </div>
+
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <h3>12+</h3>
+                        <p>Racikan Menu</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>4.9 ★</h3>
+                        <p>Rating Pelanggan</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>100%</h3>
+                        <p>Bahan Fresh Hari Ini</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-image-wrapper">
+                <div class="hero-img-card main-img">
+                    <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=800&q=80" alt="Lab Rasa Specia Menu">
+                </div>
+                <div class="floating-badge badge-1">
+                    <i class="fa-solid fa-fire" style="color: var(--pedas);"></i> Pedas Level Nitro!
+                </div>
+                <div class="floating-badge badge-2">
+                    <i class="fa-solid fa-glass-water" style="color: var(--segar);"></i> Minuman Segar
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Filter & Menu Section -->
+    <section class="menu-section" id="menu">
+        <div class="container">
+            <div class="section-title text-center">
+                <p class="subtitle">Eksplorasi Menu</p>
+                <h2>Pilih Formula Sensasi Rasamu!</h2>
+            </div>
+
+            <!-- Search Bar & Filters -->
+            <div class="filter-controls">
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="searchInput" placeholder="Cari nama makanan atau minuman...">
+                </div>
+
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all"><i class="fa-solid fa-cubes-stacked"></i> Semua Menu</button>
+                    <button class="filter-btn" data-filter="pedas"><i class="fa-solid fa-fire"></i> Pedas</button>
+                    <button class="filter-btn" data-filter="manis"><i class="fa-solid fa-candy-cane"></i> Manis</button>
+                    <button class="filter-btn" data-filter="asin"><i class="fa-solid fa-bowl-food"></i> Asin & Gurih</button>
+                    <button class="filter-btn" data-filter="segar"><i class="fa-solid fa-wine-glass"></i> Minuman Segar</button>
+                </div>
+            </div>
+
+            <!-- Menu Grid Layout -->
+            <div class="menu-grid" id="menuGrid">
+                <!-- Javascript akan mengisi menu di sini secara otomatis -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Promo Banner Section -->
+    <section class="promo-section" id="promo">
+        <div class="container">
+            <div class="promo-card">
+                <div class="promo-content">
+                    <span class="promo-tag"><i class="fa-solid fa-tag"></i> Promo Eksperimen Hemat</span>
+                    <h2>Beli 2 Makanan Pedas + Gratis 1 Minuman Segar!</h2>
+                    <p>Khusus pemesanan hari ini melalui WhatsApp official Lab Rasa. Jangan sampai kehabisan!</p>
+                    <a href="#menu" class="btn btn-primary"><i class="fa-solid fa-bag-shopping"></i> Pesan Promo Sekarang</a>
+                </div>
+                <div class="promo-icon">
+                    <i class="fa-solid fa-flask-vial"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="reviews-section" id="reviews">
+        <div class="container">
+            <div class="section-title text-center">
+                <p class="subtitle">Testimoni</p>
+                <h2>Apa Kata Para Penikmat Rasa?</h2>
+            </div>
+
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Ayam Geprek Nitro Pedasnya gokil bgt! Bikin ketagihan tapi gak cuma pedas doang, gurihnya dapet banget!"</p>
+                    <div class="reviewer">
+                        <div class="avatar">DA</div>
+                        <div>
+                            <h4>Dian Anggraini</h4>
+                            <small>Pencinta Pedas</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Boba Brown Sugar & Es Mango Passion-nya super segarrr! Penyelamat pas cuaca lagi panas-panasnya."</p>
+                    <div class="reviewer">
+                        <div class="avatar">RF</div>
+                        <div>
+                            <h4>Rian Fadhil</h4>
+                            <small>Food Vlogger</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Roti Bakar Caramel Choco-nya empuk dan melimpah topping manisnya. Anak-anak di rumah pada suka!"</p>
+                    <div class="reviewer">
+                        <div class="avatar">SML</div>
+                        <div>
+                            <h4>Siti Maria</h4>
+                            <small>Ibu Rumah Tangga</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Location Section -->
+    <section class="contact-section" id="contact">
+        <div class="container contact-grid">
+            <div class="contact-info">
+                <p class="subtitle">Kunjungi Kami</p>
+                <h2>Markas Utama Lab Rasa</h2>
+                <p>Datang langsung ke kedai kami untuk menikmati sajian fresh dari dapur eksperimen kami atau pesan via online!</p>
+
+                <div class="info-list">
+                    <div class="info-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div>
+                            <h4>Alamat</h4>
+                            <p>Jl. Raya Tengah No.80, RT.1/RW.3, Gedong, Kec. Ps. Rebo, Kota Jakarta Timur (UNINDRA KAMPUS B)</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fa-solid fa-clock"></i>
+                        <div>
+                            <h4>Jam Operasional</h4>
+                            <p>Senin - Minggu: 09:00 - 19:00 WIB</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <div>
+                            <h4>Order & Hotline</h4>
+                            <p>0821-2307-7949</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.760641287129!2d106.85944907503827!3d-6.295154593693921!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ed80b84ac47d%3A0x640561dd89719c88!2sUniversitas%20Indraprasta%20PGRI%20(UNINDRA)%2C%20Kampus%20B!5e0!3m2!1sid!2sid!4v1790776028436!5m2!1sid!2sid" width="100%" height="320" style="border:0; border-radius:16px;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <a href="#" class="logo">
+                    <i class="fa-solid fa-vial-circle-check"></i>
+                    <span>LAB<span class="highlight">RASA</span></span>
+                </a>
+                <p>Sajian makanan dan minuman kekinian dengan kombinasi racikan rasa unik, lezat, dan higienis.</p>
+            </div>
+
+            <div class="footer-socials">
+                <h4>Ikuti Media Sosial</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="https://api.whatsapp.com/send/?phone=6282123077949&text=Halo+Lab+Rasa%2C+saya+mau+tanya+menu&type=phone_number&app_absent=0"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Lab Rasa UMKM. All Rights Reserved. Made with ❤️ for Kuliner Indonesia.</p>
+        </div>
+    </footer>
+
+    <!-- Slide-over Shopping Cart Panel -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div class="cart-drawer" id="cartDrawer">
+        <div class="cart-header">
+            <h3><i class="fa-solid fa-flask"></i> Tabung Pesanan Anda</h3>
+            <button class="cart-close" id="cartClose"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+
+        <div class="cart-items" id="cartItems">
+            <!-- Disikan oleh Javascript -->
+        </div>
+
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total Biaya Rasa:</span>
+                <span id="cartTotalPrice" class="total-price">Rp 0</span>
+            </div>
+            <button class="btn btn-primary btn-block" id="checkoutBtn"><i class="fa-brands fa-whatsapp"></i> Kirim Pesanan ke WhatsApp</button>
+        </div>
+    </div>
+
+    <!-- Modal Detail Menu -->
+    <div class="modal" id="menuModal">
+        <div class="modal-overlay" id="modalOverlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose"><i class="fa-solid fa-xmark"></i></button>
+            <div id="modalBody">
+                <!-- Javascript memuat detail menu di sini -->
+            </div>
+        </div>
+    </div>
+
+    <!-- File JavaScript Eksternal -->
+    <script src="script.js"></script>
+</body>
+</html>
